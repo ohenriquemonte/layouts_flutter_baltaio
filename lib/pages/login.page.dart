@@ -1,6 +1,7 @@
 // ignore_for_file: deprecated_member_use
 
 import 'package:flutter/material.dart';
+import 'package:layouts_flutter/pages/home.page.dart';
 import 'package:layouts_flutter/pages/signup.page.dart';
 
 class LoginPage extends StatelessWidget {
@@ -109,7 +110,14 @@ class LoginPage extends StatelessWidget {
                             'Sign In',
                             style: TextStyle(color: Colors.white),
                           ),
-                          onPressed: () {},
+                          onPressed: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => const HomePage(),
+                              ),
+                            );
+                          },
                         ),
                       ),
                     ],
