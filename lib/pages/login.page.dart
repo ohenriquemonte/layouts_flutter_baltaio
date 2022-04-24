@@ -110,14 +110,7 @@ class LoginPage extends StatelessWidget {
                             'Sign In',
                             style: TextStyle(color: Colors.white),
                           ),
-                          onPressed: () {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) => const HomePage(),
-                              ),
-                            );
-                          },
+                          onPressed: () {},
                         ),
                       ),
                     ],

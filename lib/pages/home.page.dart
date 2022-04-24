@@ -1,4 +1,7 @@
+// ignore_for_file: deprecated_member_use
+
 import 'package:flutter/material.dart';
+import 'package:layouts_flutter/pages/product.page.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -8,6 +11,7 @@ class HomePage extends StatelessWidget {
     return Scaffold(
       body: Container(
         color: const Color(0xFFF5F5F5),
+        padding: const EdgeInsets.all(10),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
@@ -21,9 +25,30 @@ class HomePage extends StatelessWidget {
               ),
             ),
             const SizedBox(height: 10),
-            Container(
+            SizedBox(
               height: 90,
               child: categoryList(),
+            ),
+            const SizedBox(height: 30),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                const Text(
+                  'Best Selling',
+                  style: TextStyle(fontSize: 30),
+                ),
+                FlatButton(
+                  child: const Text('See All'),
+                  onPressed: () {},
+                ),
+              ],
+            ),
+            const SizedBox(
+              height: 10,
+            ),
+            SizedBox(
+              height: 350,
+              child: productList(context),
             ),
           ],
         ),
@@ -68,19 +93,20 @@ class HomePage extends StatelessWidget {
   }
 
   Widget categoryList() {
-    return Container(
-        width: 70,
-        child: ListView(
-          scrollDirection: Axis.horizontal,
-          children: [
-            categoryItem(),
-            categoryItem(),
-            categoryItem(),
-            categoryItem(),
-            categoryItem(),
-            categoryItem(),
-          ],
-        ));
+    return SizedBox(
+      //   width: 70,
+      child: ListView(
+        scrollDirection: Axis.horizontal,
+        children: [
+          categoryItem(),
+          categoryItem(),
+          categoryItem(),
+          categoryItem(),
+          categoryItem(),
+          categoryItem(),
+        ],
+      ),
+    );
   }
 
   Widget categoryItem() {
@@ -104,6 +130,74 @@ class HomePage extends StatelessWidget {
         ),
       ),
       child: Image.asset('assets/Icon_Devices.png'),
+    );
+  }
+
+  Widget productList(BuildContext context) {
+    return SizedBox(
+      child: ListView(
+        scrollDirection: Axis.horizontal,
+        children: [
+          productItem(context),
+          productItem(context),
+          productItem(context),
+          productItem(context),
+          productItem(context),
+          productItem(context),
+        ],
+      ),
+    );
+  }
+
+  Widget productItem(BuildContext context) {
+    return Container(
+      padding: const EdgeInsets.all(10),
+      margin: const EdgeInsets.all(5),
+      width: 170,
+      color: Colors.black12,
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          GestureDetector(
+            child: Image.asset(
+              'assets/product-1.png',
+              width: 170,
+              height: 170,
+              fit: BoxFit.cover,
+            ),
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const ProductPage(),
+                ),
+              );
+            },
+          ),
+          const SizedBox(height: 10),
+          const SizedBox(
+            height: 60,
+            child: Text(
+              'Título do produto',
+              style: TextStyle(fontSize: 18, fontWeight: FontWeight.w300),
+            ),
+          ),
+          const SizedBox(height: 5),
+          const Text(
+            'Marca',
+            style: TextStyle(fontSize: 14, fontWeight: FontWeight.w300),
+          ),
+          const SizedBox(height: 5),
+          const Text(
+            '\$ 200',
+            style: TextStyle(
+              fontSize: 16,
+              fontWeight: FontWeight.bold,
+              color: Color(0xFF00C569),
+            ),
+          ),
+        ],
+      ),
     );
   }
 }
