@@ -11,11 +11,6 @@ class SignupPage extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: Colors.white.withOpacity(0.0),
         elevation: 0,
-        // leading: const Text('1'),
-        // title: const Text('Teste'),
-        // actions: const [
-        //   Icon(Icons.favorite),
-        // ],
       ),
       body: SingleChildScrollView(
         child: Container(
@@ -52,7 +47,6 @@ class SignupPage extends StatelessWidget {
                         ),
                         const SizedBox(height: 60),
                         TextFormField(
-                          //   autofocus: true,
                           keyboardType: TextInputType.text,
                           decoration: const InputDecoration(
                             labelText: 'Name',
@@ -66,7 +60,6 @@ class SignupPage extends StatelessWidget {
                         ),
                         const SizedBox(height: 10),
                         TextFormField(
-                          //   autofocus: true,
                           keyboardType: TextInputType.emailAddress,
                           decoration: const InputDecoration(
                             labelText: 'Email',
@@ -80,7 +73,6 @@ class SignupPage extends StatelessWidget {
                         ),
                         const SizedBox(height: 10),
                         TextFormField(
-                          //   autofocus: true,
                           obscureText: true,
                           keyboardType: TextInputType.text,
                           decoration: const InputDecoration(

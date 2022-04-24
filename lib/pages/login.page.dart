@@ -1,8 +1,8 @@
 // ignore_for_file: deprecated_member_use
 
 import 'package:flutter/material.dart';
-import 'package:layouts_flutter/pages/home.page.dart';
-import 'package:layouts_flutter/pages/signup.page.dart';
+
+import 'signup.page.dart';
 
 class LoginPage extends StatelessWidget {
   const LoginPage({Key? key}) : super(key: key);
@@ -63,7 +63,6 @@ class LoginPage extends StatelessWidget {
                         ],
                       ),
                       TextFormField(
-                        //   autofocus: true,
                         keyboardType: TextInputType.emailAddress,
                         decoration: const InputDecoration(
                           labelText: 'Email',
@@ -77,7 +76,6 @@ class LoginPage extends StatelessWidget {
                       ),
                       const SizedBox(height: 10),
                       TextFormField(
-                        //   autofocus: true,
                         keyboardType: TextInputType.text,
                         obscureText: true,
                         decoration: const InputDecoration(

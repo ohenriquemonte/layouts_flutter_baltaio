@@ -1,12 +1,22 @@
 import 'package:flutter/material.dart';
 
 class ProductPage extends StatelessWidget {
-  const ProductPage({Key? key}) : super(key: key);
+  const ProductPage({
+    Key? key,
+    required this.image,
+    required this.title,
+    required this.description,
+    required this.price,
+  }) : super(key: key);
+
+  final String image;
+  final String title;
+  final String description;
+  final double price;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      //   appBar: AppBar(),
       body: NestedScrollView(
         headerSliverBuilder: (BuildContext context, bool innerBoxIsScrolled) {
           return [
@@ -19,7 +29,7 @@ class ProductPage extends StatelessWidget {
               flexibleSpace: FlexibleSpaceBar(
                 centerTitle: true,
                 background: Image.asset(
-                  'assets/product-10.png',
+                  image,
                   fit: BoxFit.fitWidth,
                 ),
               ),
@@ -27,26 +37,29 @@ class ProductPage extends StatelessWidget {
           ];
         },
         body: ListView(
-          children: const [
+          children: [
             Padding(
-              padding: EdgeInsets.only(top: 10, left: 10, right: 10),
+              padding: const EdgeInsets.only(top: 10, left: 10, right: 10),
               child: Text(
-                'Dry Fit Long Sleeve',
-                style: TextStyle(
+                title,
+                style: const TextStyle(
                   fontSize: 26,
                   fontWeight: FontWeight.bold,
                 ),
               ),
             ),
-            Padding(padding: EdgeInsets.all(10), child: Text('by Nike')),
             Padding(
+              padding: const EdgeInsets.all(10),
+              child: Text('by $description'),
+            ),
+            const Padding(
               padding: EdgeInsets.all(10),
               child: Text(
                 'Details',
                 style: TextStyle(fontWeight: FontWeight.bold),
               ),
             ),
-            Padding(
+            const Padding(
               padding: EdgeInsets.all(10),
               child: Text(
                 'Nike Dry-FIT is a polyester fabric designed to help you keep dry so you can more comfortably work harder, longer',
