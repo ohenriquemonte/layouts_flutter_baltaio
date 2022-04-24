@@ -14,16 +14,19 @@ class SignupPage extends StatelessWidget {
       ),
       body: SingleChildScrollView(
         child: Container(
-          padding:
-              const EdgeInsets.only(top: 80, left: 20, right: 20, bottom: 40),
-          color: const Color(0xFFF5F5F5),
+          padding: const EdgeInsets.only(
+            top: 80,
+            left: 20,
+            right: 20,
+            bottom: 40,
+          ),
           child: Center(
             child: Column(
               children: [
                 Container(
-                  decoration: const BoxDecoration(
-                    color: Colors.white,
-                    boxShadow: [
+                  decoration: BoxDecoration(
+                    color: Theme.of(context).colorScheme.secondary,
+                    boxShadow: const [
                       BoxShadow(
                         color: Colors.black12,
                         offset: Offset(1, 2.0),
@@ -38,52 +41,88 @@ class SignupPage extends StatelessWidget {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.stretch,
                       children: [
-                        const Text(
+                        Text(
                           'Signup',
-                          style: TextStyle(
-                            fontSize: 30,
-                            fontWeight: FontWeight.w500,
-                          ),
+                          style: Theme.of(context).textTheme.headline3,
                         ),
                         const SizedBox(height: 60),
                         TextFormField(
                           keyboardType: TextInputType.text,
-                          decoration: const InputDecoration(
+                          decoration: InputDecoration(
                             labelText: 'Name',
                             labelStyle: TextStyle(
-                              color: Colors.black,
+                              color: Theme.of(context).primaryColor,
                               fontSize: 16,
                               fontWeight: FontWeight.w400,
                             ),
+                            enabledBorder: UnderlineInputBorder(
+                              borderSide: BorderSide(
+                                color: Theme.of(context).primaryColor,
+                              ),
+                            ),
+                            focusedBorder: UnderlineInputBorder(
+                              borderSide: BorderSide(
+                                color: Theme.of(context).primaryColor,
+                              ),
+                            ),
                           ),
-                          style: const TextStyle(fontSize: 20),
+                          style: TextStyle(
+                            fontSize: 20,
+                            color: Theme.of(context).primaryColor,
+                          ),
                         ),
                         const SizedBox(height: 10),
                         TextFormField(
                           keyboardType: TextInputType.emailAddress,
-                          decoration: const InputDecoration(
+                          decoration: InputDecoration(
                             labelText: 'Email',
                             labelStyle: TextStyle(
-                              color: Colors.black,
+                              color: Theme.of(context).primaryColor,
                               fontSize: 16,
                               fontWeight: FontWeight.w400,
                             ),
+                            enabledBorder: UnderlineInputBorder(
+                              borderSide: BorderSide(
+                                color: Theme.of(context).primaryColor,
+                              ),
+                            ),
+                            focusedBorder: UnderlineInputBorder(
+                              borderSide: BorderSide(
+                                color: Theme.of(context).primaryColor,
+                              ),
+                            ),
                           ),
-                          style: const TextStyle(fontSize: 20),
+                          style: TextStyle(
+                            fontSize: 20,
+                            color: Theme.of(context).primaryColor,
+                          ),
                         ),
                         const SizedBox(height: 10),
                         TextFormField(
                           obscureText: true,
                           keyboardType: TextInputType.text,
-                          decoration: const InputDecoration(
+                          decoration: InputDecoration(
                             labelText: 'Password',
                             labelStyle: TextStyle(
-                              color: Colors.black,
+                              color: Theme.of(context).primaryColor,
                               fontSize: 16,
                               fontWeight: FontWeight.w400,
                             ),
+                            enabledBorder: UnderlineInputBorder(
+                              borderSide: BorderSide(
+                                color: Theme.of(context).primaryColor,
+                              ),
+                            ),
+                            focusedBorder: UnderlineInputBorder(
+                              borderSide: BorderSide(
+                                color: Theme.of(context).primaryColor,
+                              ),
+                            ),
                           ),
-                          style: const TextStyle(fontSize: 20),
+                          style: TextStyle(
+                            fontSize: 20,
+                            color: Theme.of(context).primaryColor,
+                          ),
                         ),
                         const SizedBox(height: 40),
                         Container(
@@ -93,9 +132,11 @@ class SignupPage extends StatelessWidget {
                             borderRadius: BorderRadius.all(Radius.circular(5)),
                           ),
                           child: FlatButton(
-                            child: const Text(
+                            child: Text(
                               'Sign Up',
-                              style: TextStyle(color: Colors.white),
+                              style: TextStyle(
+                                color: Theme.of(context).colorScheme.secondary,
+                              ),
                             ),
                             onPressed: () {},
                           ),

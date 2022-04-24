@@ -12,7 +12,6 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        color: const Color(0xFFF5F5F5),
         padding: const EdgeInsets.all(10),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -20,11 +19,9 @@ class HomePage extends StatelessWidget {
             const SizedBox(height: 60),
             const SearchBox(),
             const SizedBox(height: 30),
-            const Text(
+            Text(
               'Categories',
-              style: TextStyle(
-                fontSize: 30,
-              ),
+              style: Theme.of(context).textTheme.headline1,
             ),
             const SizedBox(height: 10),
             const SizedBox(
@@ -35,9 +32,9 @@ class HomePage extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                const Text(
+                Text(
                   'Best Selling',
-                  style: TextStyle(fontSize: 30),
+                  style: Theme.of(context).textTheme.headline1,
                 ),
                 FlatButton(
                   child: const Text('See All'),

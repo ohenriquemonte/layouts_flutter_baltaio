@@ -26,14 +26,14 @@ class CartPage extends StatelessWidget {
                   padding: const EdgeInsets.only(left: 20, top: 20),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
-                    children: const [
-                      Text('Total'),
-                      SizedBox(height: 5),
+                    children: [
+                      const Text('Total'),
+                      const SizedBox(height: 5),
                       Text(
                         '\$4250',
                         style: TextStyle(
                           fontSize: 20,
-                          color: Colors.blue,
+                          color: Theme.of(context).primaryColor,
                           fontWeight: FontWeight.bold,
                         ),
                       ),
@@ -43,18 +43,20 @@ class CartPage extends StatelessWidget {
                 Container(
                   height: 50,
                   width: 150,
-                  decoration: const BoxDecoration(
-                    color: Colors.blue,
-                    borderRadius: BorderRadius.all(
+                  decoration: BoxDecoration(
+                    color: Theme.of(context).primaryColor,
+                    borderRadius: const BorderRadius.all(
                       Radius.circular(5),
                     ),
                   ),
                   margin: const EdgeInsets.only(right: 20),
                   child: FlatButton(
                     onPressed: () {},
-                    child: const Text(
+                    child: Text(
                       'Checkout',
-                      style: TextStyle(color: Colors.white),
+                      style: TextStyle(
+                        color: Theme.of(context).colorScheme.secondary,
+                      ),
                     ),
                   ),
                 )
@@ -108,8 +110,8 @@ class CartPage extends StatelessWidget {
                 Text(title),
                 Text(
                   '\$$price',
-                  style: const TextStyle(
-                    color: Colors.blue,
+                  style: TextStyle(
+                    color: Theme.of(context).primaryColor,
                   ),
                 ),
                 const SizedBox(height: 10),
