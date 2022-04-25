@@ -27,11 +27,14 @@ class ProductItem extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           GestureDetector(
-            child: Image.asset(
-              image,
-              width: 170,
-              height: 170,
-              fit: BoxFit.cover,
+            child: Hero(
+              tag: image,
+              child: Image.asset(
+                image,
+                width: 170,
+                height: 170,
+                fit: BoxFit.cover,
+              ),
             ),
             onTap: () {
               Navigator.push(
